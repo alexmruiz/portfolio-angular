@@ -1,0 +1,19 @@
+/* Ajustes de tipografía para impacto */
+h1 {
+  letter-spacing: -0.04em;
+}
+
+/* Efecto de borde en el texto */
+.text-outline {
+  /* Crea el contorno: 2px de grosor con el color de tu variable de texto */
+  -webkit-text-stroke: 2px var(--text-main);
+  /* Asegura que el interior sea transparente */
+  color: transparent;
+  /* Suaviza el renderizado del borde */
+  paint-order: stroke fill;
+}
+
+/* Opcional: un efecto de brillo muy sutil en el nombre sólido */
+.text-main {
+  text-shadow: 0 0 30px rgba(91, 140, 255, 0.2);
+}

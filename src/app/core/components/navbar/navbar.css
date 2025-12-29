@@ -1,0 +1,49 @@
+/* Estilos para los enlaces del navbar */
+a {
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+a.active {
+  color: var(--accent);
+}
+nav {
+  background-color: var(--bg-main);
+  border-bottom: 1px solid var(--border-color);
+}
+
+ul {
+  background-color: var(--bg-main);
+}
+
+
+.nav-link {
+  position: relative;
+  font-weight: 500;
+}
+
+.nav-link.active {
+  color: var(--accent);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent);
+  border-radius: 2px;
+}
+
+
