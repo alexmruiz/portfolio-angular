@@ -1,0 +1,31 @@
+:host {
+  display: block;
+}
+
+/* Efecto de pulso suave para el corazón */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.animate-pulse {
+  animation: pulse 1.5s ease-in-out infinite;
+  display: inline-block;
+}
+
+/* Triángulo pequeño del tooltip */
+span.absolute::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -4px;
+  border-width: 4px;
+  border-style: solid;
+  border-color: #161B22 transparent transparent transparent;
+}
+
+/* Transición suave para todos los iconos */
+i {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}

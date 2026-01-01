@@ -46,3 +46,11 @@ nav {
     padding: 1rem;
   }
 }
+
+/* Usamos el ID del padre o doble clase para dar más fuerza al selector */
+.nav-link.active {
+  color: #64FFDA !important; 
+  text-shadow: 0 0 15px rgba(100, 255, 218, 0.6);
+  font-weight: 700;
+  opacity: 1;
+}

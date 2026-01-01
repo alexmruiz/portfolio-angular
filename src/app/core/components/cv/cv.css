@@ -1,0 +1,30 @@
+:host {
+  display: block;
+}
+
+@keyframes fadeInUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.animation-fade-in {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Línea de tiempo degradada usando CSS estándar */
+.border-l-2 {
+  border-left: 2px solid #1A1F26;
+}
+
+@media (min-width: 768px) {
+  .border-l-2 {
+    /* Esto crea el efecto de desvanecimiento en la línea */
+    border-image: linear-gradient(to bottom, #64FFDA, #1A1F26, transparent) 1;
+  }
+}

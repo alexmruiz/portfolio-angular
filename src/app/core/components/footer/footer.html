@@ -1,1 +1,43 @@
-<p>footer works!</p>
+<footer class="relative bg-[#0B0E14] pt-20 pb-10 overflow-hidden border-t border-white/5">
+  <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-32 bg-[#64FFDA] opacity-[0.03] blur-[100px] pointer-events-none"></div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="flex flex-col items-center space-y-12">
+      
+      <div class="text-2xl font-bold tracking-tighter text-[#F8F9FA]">
+        AMR<span class="text-[#64FFDA]">.</span>DEV
+      </div>
+
+      <div class="flex items-center gap-6">
+        @for (social of socials; track social.name) {
+          <a [href]="social.url" 
+             target="_blank"
+             class="group relative flex items-center justify-center w-12 h-12 rounded-xl bg-[#161B22] border border-white/5 
+                    hover:border-[#64FFDA]/50 transition-all duration-300 hover:-translate-y-1 shadow-lg"
+             [attr.aria-label]="social.name">
+            
+            <i [class]="social.icon" class="text-xl text-[#B0B8C1] group-hover:text-[#64FFDA] transition-colors"></i>
+            
+            <span class="absolute -top-10 scale-0 group-hover:scale-100 transition-all duration-200 
+                         bg-[#161B22] text-[#64FFDA] text-xs font-mono py-1 px-3 rounded border border-[#64FFDA]/30
+                         shadow-[0_0_15px_rgba(100,255,218,0.2)]">
+              {{ social.name }}
+            </span>
+          </a>
+        }
+      </div>
+
+      <div class="flex flex-col items-center space-y-2 text-center">
+        <p class="text-[#B0B8C1] text-sm font-medium tracking-wide">
+          © {{ currentYear }} — Alejandro Rodríguez
+        </p>
+        <p class="text-[#B0B8C1]/50 text-xs flex items-center gap-2">
+          Hecho con <span class="text-red-500 animate-pulse">❤️</span> por ti
+          <span class="hidden md:inline text-[#B0B8C1]/30">|</span>
+          <span class="font-mono text-[10px]">v1.0.0</span>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</footer>
