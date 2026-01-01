@@ -1,0 +1,33 @@
+:host {
+  display: block;
+  background-color: var(--bg-main);
+}
+
+/* Transición suave de entrada al hacer scroll */
+section {
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Resaltado de palabras clave con el color de acento */
+.text-accent {
+  color: var(--accent);
+  text-shadow: 0 0 10px var(--accent-glow);
+}
+
+/* Ajuste fino para asegurar que el texto no se extienda demasiado */
+p {
+  color: var(--text-secondary); /* Gris azulado */
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Efecto de "vignette" para centrar la atención en el texto */
+section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 20%, var(--bg-main) 100%);
+  pointer-events: none;
+  z-index: 1;
+}

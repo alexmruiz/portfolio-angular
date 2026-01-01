@@ -1,40 +1,79 @@
 @import "tailwindcss";
 
-/* Fuentes: Space Grotesk para títulos, Inter para cuerpo */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@700;800&display=swap');
-
+/* 1. IMPORTACIÓN DE FUENTES */
+/* Space Grotesk (Títulos), Inter (Cuerpo) y Fira Code (Monospaced/Tech) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@600;800&family=Fira+Code&display=swap');
 @import "@fortawesome/fontawesome-free/css/all.css";
 
 :root {
   /* Fondo y Superficies */
-  --bg-main: #0B0E14;
-  --bg-card: #151921;
-  --grid-color: rgba(26, 31, 38, 0.4);
+  --bg-main: #0B0E14;      /* Fondo Base */
+  --bg-surface: #161B22;   /* Superficie (Cards/Inputs) */
+  --grid-color: #1A1F26;   /* Color de la Cuadrícula */
   
   /* Colores de Acento */
-  --accent: #64FFDA;       /* Verde agua / Cian */
+  --accent: #64FFDA;       /* Acento (Verde agua) */
   --accent-glow: rgba(100, 255, 218, 0.3);
-  --accent-purple: #7D5FFF;
   
   /* Tipografía */
-  --text-main: #F8F9FA;      /* Blanco casi puro */
-  --text-secondary: #B0B8C1; /* Gris azulado */
+  --text-main: #F8F9FA;      /* Título Principal (Blanco casi puro) */
+  --text-secondary: #B0B8C1; /* Texto de Cuerpo (Gris azulado) */
 }
 
+/* 2. ESTILOS BASE */
 body {
   font-family: 'Inter', sans-serif;
   background-color: var(--bg-main);
-  color: var(--text-main);
+  color: var(--text-secondary); /* Por defecto el cuerpo usa el gris */
+  font-size: 18px;             /* Requisito P: 18px */
+  line-height: 1.6;            /* Requisito P: Line-height 1.6 */
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
-h1, h2, h3 {
+/* 3. JERARQUÍA TIPOGRÁFICA */
+h1 {
   font-family: 'Space Grotesk', sans-serif;
+  font-size: 72px;             /* Requisito H1: 72px */
+  font-weight: 800;            /* Requisito H1: Bold 800 */
+  color: var(--text-main);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
-/* Optimización de la Cuadrícula para Performance */
+h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 40px;             /* Requisito H2: 40px */
+  font-weight: 600;            /* Requisito H2: Semi-bold 600 */
+  color: var(--text-main);
+}
+
+p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;            /* Requisito P: Regular 400 */
+  margin-bottom: 1rem;
+}
+
+/* Navbar & Tags */
+.nav-link, .tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;             /* Requisito: 14px */
+  font-weight: 500;            /* Requisito: Medium 500 */
+  letter-spacing: 1px;         /* Requisito: 1px spacing */
+}
+
+/* Code & Tech Icons */
+code, .tech-icon-label {
+  font-family: 'Fira Code', monospace;
+  font-size: 16px;             /* Requisito: 16px */
+}
+
+/* 4. COMPONENTES GLOBALES */
+
+/* Cuadrícula Técnica */
 .bg-grid-fineline {
+  position: absolute;
+  inset: 0;
   background-size: 50px 50px;
   background-image: 
     linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
@@ -42,4 +81,10 @@ h1, h2, h3 {
   mask-image: radial-gradient(circle at center, black 30%, transparent 90%);
   -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 90%);
   pointer-events: none;
+  z-index: 0;
 }
+
+/* Utility para el color de acento en Tailwind */
+.text-accent { color: var(--accent); }
+.bg-accent { background-color: var(--accent); }
+.border-accent { border-color: var(--accent); }

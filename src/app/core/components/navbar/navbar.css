@@ -1,31 +1,48 @@
 nav {
+  /* Fondo: #0B0E14 con 70% opacidad */
   background: rgba(11, 14, 20, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  transition: all 0.3s ease;
+  
+  /* Efecto Cristal */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  /* Borde inferior técnico */
+  border-bottom: 1px solid #1A1F26;
+  
+  transition: all 0.4s ease;
 }
 
+/* Estilo base de los links */
 .nav-link {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #B0B8C1; /* Gris azulado */
+  font-size: 1.1rem;
   font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-  color: var(--accent);
-}
-
-.nav-link.active {
-  color: var(--accent);
-  text-shadow: 0 0 10px var(--accent-glow);
-}
-
-ul {
-  background: rgba(11, 14, 20, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+/* Hover: Cambio a color de acento */
+.nav-link:hover {
+  color: #64FFDA;
+}
+
+/* Link Activo: Solo color y resplandor sutil */
+.nav-link.active {
+  color: #64FFDA;
+  /* El text-shadow crea ese efecto de "luz" que mencionamos al principio */
+  text-shadow: 0 0 12px rgba(100, 255, 218, 0.5);
+  font-weight: 600;
+}
+
+/* Para el menú móvil si se despliega */
+@media (max-width: 768px) {
+  .mobile-menu-bg {
+    background: rgba(11, 14, 20, 0.95);
+    border: 1px solid #1A1F26;
+    border-radius: 12px;
+    margin-top: 1rem;
+    padding: 1rem;
+  }
 }
