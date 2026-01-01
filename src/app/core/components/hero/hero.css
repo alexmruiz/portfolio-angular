@@ -1,0 +1,42 @@
+:host {
+  display: block;
+  animation: fadeIn 1.2s ease-out;
+}
+
+/* Efecto de borde en el texto (Outline) */
+.border-text {
+  -webkit-text-stroke: 1.5px var(--text-main);
+  opacity: 0.7;
+}
+
+/* Estilo para los iconos del Stack */
+.tech-icon {
+  color: #B0B8C1; /* Gris azulado sugerido */
+  filter: drop-shadow(0 0 0px transparent);
+}
+
+.tech-icon:hover {
+  color: #64FFDA; /* Verde agua vibrante */
+  transform: translateY(-8px) scale(1.1);
+  filter: drop-shadow(0 0 12px rgba(100, 255, 218, 0.5));
+}
+
+/* Brillo sutil para el nombre sólido */
+.text-main {
+  text-shadow: 0 0 40px rgba(100, 255, 218, 0.15);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ajuste de la cuadrícula heredado del global pero afinado */
+.bg-grid-fineline {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  mask-image: radial-gradient(circle at center, black 40%, transparent 95%);
+  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 95%);
+}

@@ -2,7 +2,7 @@ import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Navbar } from './core/components/navbar/navbar';
 import { Footer } from './core/components/footer/footer';
-import { Hero } from './hero/hero';
+import { Hero } from './core/components/hero/hero';
 
 @Component({
   selector: 'app-root',
