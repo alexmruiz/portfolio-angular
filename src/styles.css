@@ -1,50 +1,43 @@
 @import "tailwindcss";
-/* Importar fuentes desde Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Cabin+Sketch:wght@700&display=swap');
 
+/* Fuentes: Space Grotesk para títulos, Inter para cuerpo */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@700;800&display=swap');
+
+:root {
+  /* Fondo y Superficies */
+  --bg-main: #0B0E14;
+  --bg-card: #151921;
+  --grid-color: rgba(26, 31, 38, 0.4);
+  
+  /* Colores de Acento */
+  --accent: #64FFDA;       /* Verde agua / Cian */
+  --accent-glow: rgba(100, 255, 218, 0.3);
+  --accent-purple: #7D5FFF;
+  
+  /* Tipografía */
+  --text-main: #F8F9FA;      /* Blanco casi puro */
+  --text-secondary: #B0B8C1; /* Gris azulado */
+}
 
 body {
   font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--text-main);
   background-color: var(--bg-main);
+  color: var(--text-main);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-h1, h2, h3, h4 {
-  line-height: 1.3;
+h1, h2, h3 {
+  font-family: 'Space Grotesk', sans-serif;
 }
 
-h1 { font-size: 40px; font-weight: 700; }
-h2 { font-size: 32px; font-weight: 600; }
-h3 { font-size: 24px; font-weight: 600; }
-h4 { font-size: 20px; font-weight: 500; }
-
-:root {
-  --bg-main: #0B0E14;
-  --bg-section: #121826;
-  --bg-surface: #1A2138;
-
-  --border-color: #2A3150;
-
-  --text-main: #E6E8EB;
-  --text-secondary: #A0A6B3;
-  --text-muted: #6F7480;
-
-  --accent: #5B8CFF;
-}
-
-/* Cuadrícula técnica sutil */
+/* Optimización de la Cuadrícula para Performance */
 .bg-grid-fineline {
   background-size: 50px 50px;
-  background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  /* Máscara radial para que la cuadrícula se pierda en los bordes (opcional pero recomendado) */
-  mask-image: radial-gradient(circle at center, black 40%, transparent 90%);
-  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 90%);
+  background-image: 
+    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+  mask-image: radial-gradient(circle at center, black 30%, transparent 90%);
+  -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 90%);
+  pointer-events: none;
 }
-
-
-
-

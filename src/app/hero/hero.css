@@ -1,0 +1,21 @@
+/* Efecto de borde en el texto (Outline) */
+.border-text {
+  -webkit-text-stroke: 1.5px var(--text-main);
+  opacity: 0.8;
+}
+
+/* Brillo sutil para el texto principal */
+.text-main {
+  text-shadow: 0 0 40px rgba(100, 255, 218, 0.15);
+}
+
+/* Animación de entrada para los elementos */
+:host {
+  display: block;
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
