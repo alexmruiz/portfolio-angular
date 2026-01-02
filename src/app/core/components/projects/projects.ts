@@ -26,13 +26,13 @@ export class Projects {
   projects: Project[] = [
     {
       id: 1,
-      title: 'E-Commerce Pro',
-      shortDesc: 'Plataforma de ventas con Angular y Spring Boot.',
+      title: 'Control de Inventario',
+      shortDesc: 'Control de inventario con Angular y Spring Boot.',
       fullDesc: 'Una solución integral que incluye pasarela de pagos, gestión de inventario en tiempo real y panel de administración avanzado. Desarrollada siguiendo microservicios.',
       image: 'assets/img/p1.png',
-      videoUrl: 'dQw4w9WgXcQ', // Ejemplo ID YouTube
-      repoUrl: 'https://github.com/tu-usuario/proyecto',
-      tech: ['Angular', 'Spring Boot', 'PostgreSQL']
+      videoUrl: '8IM5K84q6EM?si=n-u7tkzebolazvVI', // Ejemplo ID YouTube
+      repoUrl: 'https://github.com/alexmruiz/Inventory-backend',
+      tech: ['Angular', 'Spring Boot', 'MySQL', 'Docker']
     },
     // Añade más proyectos aquí...
   ];

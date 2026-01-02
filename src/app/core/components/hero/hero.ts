@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, signal } from '@angular/core';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
   imports: [],
   templateUrl: './hero.html',
-  styleUrl: './hero.css'
+  styleUrl: './hero.css',
 })
 export class Hero {
   // Definimos el stack para que sea fácil de actualizar
@@ -15,9 +15,19 @@ export class Hero {
     { name: 'PHP', icon: 'fab fa-php' },
     { name: 'Angular', icon: 'fab fa-angular' },
     { name: 'JavaScript', icon: 'fab fa-js' },
-    { name: 'SQL', icon: 'fas fa-database' }
+    { name: 'SQL', icon: 'fas fa-database' },
   ];
+
+  isScrolled = signal(false);
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    // Si el scroll vertical es mayor a 50px, ocultamos la flecha
+    const offset =
+      window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    this.isScrolled.set(offset > 50);
+  }
 }
-  window.addEventListener('scroll', () => {
+window.addEventListener('scroll', () => {
   document.body.classList.toggle('scrolled', window.scrollY > 50);
 });
