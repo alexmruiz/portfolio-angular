@@ -1,56 +1,51 @@
-nav {
-  /* Fondo: #0B0E14 con 70% opacidad */
-  background: rgba(11, 14, 20, 0.7);
-  
-  /* Efecto Cristal */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  
-  /* Borde inferior técnico */
-  border-bottom: 1px solid #1A1F26;
-  
-  transition: all 0.4s ease;
+/* Navbar glassmorphism */
+.navbar-glass {
+  background: rgba(11, 14, 20, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--grid-color);
 }
 
-/* Estilo base de los links */
-.nav-link {
-  display: block;
-  padding: 0.5rem 1rem;
-  color: #B0B8C1; /* Gris azulado */
-  font-size: 1.1rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  text-decoration: none;
+/* Contenedor menú */
+.nav-container {
+  display: flex;
+  gap: 2rem;
 }
 
-/* Hover: Cambio a color de acento */
-.nav-link:hover {
-  color: #64FFDA;
-}
-
-/* Link Activo: Solo color y resplandor sutil */
-.nav-link.active {
-  color: #64FFDA;
-  /* El text-shadow crea ese efecto de "luz" que mencionamos al principio */
-  text-shadow: 0 0 12px rgba(100, 255, 218, 0.5);
-  font-weight: 600;
-}
-
-/* Para el menú móvil si se despliega */
 @media (max-width: 768px) {
-  .mobile-menu-bg {
+  .nav-container {
+    position: absolute;
+    top: 100%;
+    left: 1rem;
+    right: 1rem;
+    flex-direction: column;
     background: rgba(11, 14, 20, 0.95);
-    border: 1px solid #1A1F26;
+    border: 1px solid var(--grid-color);
     border-radius: 12px;
-    margin-top: 1rem;
     padding: 1rem;
+    display: none;
+  }
+
+  .nav-container.open {
+    display: flex;
   }
 }
 
-/* Usamos el ID del padre o doble clase para dar más fuerza al selector */
+/* Links */
+.nav-link {
+  color: var(--text-secondary);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--accent);
+}
+
+/* Active */
 .nav-link.active {
-  color: #64FFDA !important; 
-  text-shadow: 0 0 15px rgba(100, 255, 218, 0.6);
-  font-weight: 700;
-  opacity: 1;
+  color: var(--accent);
+  text-shadow: 0 0 12px var(--accent-glow);
+  font-weight: 600;
 }

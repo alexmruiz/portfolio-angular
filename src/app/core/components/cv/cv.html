@@ -1,56 +1,78 @@
-<section id="curriculum" class="relative py-24 bg-[#0B0E14] min-h-screen">
+<section id="curriculum" class="relative py-24 min-h-screen">
   <div class="bg-grid-fineline opacity-20"></div>
 
   <div class="container mx-auto px-6 relative z-10">
-    
+
+    <!-- Header -->
     <div class="flex flex-col items-center text-center mb-16">
       <div class="relative inline-block">
-        <h2 class="uppercase tracking-widest text-[#F8F9FA]">Trayectoria</h2>
-        <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#64FFDA] rounded-full shadow-[0_0_15px_rgba(100,255,218,0.5)]"></div>
+        <h2 class="section-title">Trayectoria</h2>
+        <div class="section-divider"></div>
       </div>
-      <p class="text-[#64FFDA] font-mono text-sm mt-6 opacity-80">// Formación y Experiencia Profesional</p>
+      <p class="mt-6 text-sm font-mono opacity-70 text-accent">
+        // Formación y Experiencia Profesional
+      </p>
     </div>
 
+    <!-- Timeline -->
     <div class="max-w-4xl mx-auto">
-      <div class="relative border-l-2 border-[#1A1F26] ml-4 md:ml-0 md:left-1/2 md:-translate-x-px space-y-12 pb-12">
-        
-        @for (item of cvData(); track $index) {
-          <div class="relative group animation-fade-in" [style.animation-delay]="$index * 0.15 + 's'">
-            
-            <div class="absolute -left-[11px] md:left-[-9px] top-2 w-5 h-5 rounded-full bg-[#0B0E14] border-2 border-[#64FFDA] 
-                        group-hover:scale-125 transition-transform duration-300 shadow-[0_0_10px_#64FFDA] z-20"></div>
-            
-            <div class="ml-8 md:ml-12 bg-[#161B22] p-6 md:p-8 rounded-2xl border border-white/5 
-                        hover:border-[#64FFDA]/30 transition-all duration-500 hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)]">
-              
-              <div class="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
-                <div class="flex items-center gap-3">
-                  <i [class]="item.type === 'work' ? 'fas fa-briefcase' : (item.type === 'education' ? 'fas fa-graduation-cap' : 'fas fa-certificate')" 
-                     class="text-[#64FFDA]/60 group-hover:text-[#64FFDA] transition-colors"></i>
-                  <h3 class="text-xl md:text-2xl font-bold text-[#F8F9FA] leading-none">{{ item.title }}</h3>
-                </div>
-                <span class="text-[#64FFDA] font-mono text-xs tracking-tighter">{{ item.year }}</span>
-              </div>
+      <div class="timeline space-y-12 pb-12">
 
-              <span class="block text-[#B0B8C1] font-medium mb-3">{{ item.subtitle }}</span>
-              
-              <p class="text-[#B0B8C1]/80 text-base leading-relaxed mb-0">
+        @for (item of cvData(); track $index) {
+          <article
+            class="relative group animation-fade-in"
+            [style.animation-delay]="$index * 0.15 + 's'"
+          >
+
+            <!-- Punto -->
+            <span class="timeline-dot"></span>
+
+            <!-- Card -->
+            <div class="timeline-card">
+              <header class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
+                <div class="flex items-center gap-3">
+                  <i
+                    [class]="item.type === 'work'
+                      ? 'fas fa-briefcase'
+                      : item.type === 'education'
+                      ? 'fas fa-graduation-cap'
+                      : 'fas fa-certificate'"
+                    class="timeline-icon"
+                  ></i>
+
+                  <h3 class="text-xl md:text-2xl font-bold text-[var(--text-main)]">
+                    {{ item.title }}
+                  </h3>
+                </div>
+
+                <span class="timeline-year">{{ item.year }}</span>
+              </header>
+
+              <span class="block font-medium mb-3 text-[var(--text-secondary)]">
+                {{ item.subtitle }}
+              </span>
+
+              <p class="text-[var(--text-secondary)] opacity-80 leading-relaxed mb-0">
                 {{ item.description }}
               </p>
             </div>
-          </div>
+
+          </article>
         }
+
       </div>
 
+      <!-- CTA -->
       <div class="flex justify-center mt-12">
-        <button (click)="downloadCV()" 
-                class="group relative px-10 py-4 bg-transparent border border-[#64FFDA] text-[#64FFDA] font-bold rounded-xl 
-                       overflow-hidden transition-all duration-300 hover:text-[#0B0E14]">
-          <span class="relative z-10"><i class="fas fa-download mr-2"></i> Descargar Full CV (PDF)</span>
-          <div class="absolute inset-0 bg-[#64FFDA] translate-y-full group-hover:translate-y-0 transition-transform duration-300 -z-0"></div>
+        <button
+          (click)="downloadCV()"
+          class="btn-outline-accent"
+        >
+          <i class="fas fa-download mr-2"></i>
+          Descargar Full CV (PDF)
         </button>
       </div>
-    </div>
 
+    </div>
   </div>
 </section>

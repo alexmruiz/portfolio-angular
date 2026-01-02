@@ -1,47 +1,57 @@
-<section class="relative min-h-screen flex items-center justify-center py-20 overflow-hidden" id="inicio">
+<section
+  class="relative min-h-screen flex items-center justify-center py-20 "
+  id="inicio"
+>
   <div class="absolute inset-0 bg-grid-fineline z-0"></div>
 
-  <div class="container mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-    
+  <div
+    class="max-w-7xl mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+  >
     <div class="order-2 lg:order-1 space-y-8">
       <header class="space-y-4">
         <h1 class="flex flex-col font-extrabold tracking-tighter leading-[0.85]">
-          <span class="text-5xl md:text-8xl lg:text-9xl text-transparent border-text uppercase">
-            Full Stack
-          </span>
-          <span class="text-6xl md:text-9xl lg:text-[110px] text-main uppercase">
-            Developer
-          </span>
+          <span class="uppercase text-[var(--text-secondary)] opacity-80"> Full Stack </span>
+          <span class="text-accent uppercase"> Developer </span>
         </h1>
       </header>
 
       <div class="flex flex-wrap gap-8 pt-4 items-center">
         @for (tech of techStack; track tech.name) {
-          <div class="group relative flex flex-col items-center">
-            <i [class]="tech.icon" 
-               class="text-3xl md:text-4xl transition-all duration-300 cursor-help tech-icon"
-               [title]="tech.name">
-            </i>
-            <span class="absolute -bottom-8 text-[10px] uppercase tracking-widest text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              {{ tech.name }}
-            </span>
-          </div>
+        <div class="group relative flex flex-col items-center">
+          <i
+            [class]="tech.icon"
+            aria-label="{{ tech.name }}"
+            class="text-3xl md:text-4xl transition-all duration-300 cursor-help tech-icon"
+          >
+          </i>
+          <span
+            class="absolute -bottom-8 text-[10px] uppercase tracking-widest text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            {{ tech.name }}
+          </span>
+        </div>
         }
       </div>
     </div>
 
     <div class="order-1 lg:order-2 flex justify-center relative">
       <div class="absolute inset-0 bg-accent opacity-10 blur-[100px] rounded-full"></div>
-      
+
       <div class="relative group">
-        <div class="absolute -inset-1 rounded-full bg-gradient-to-tr from-accent to-[#7D5FFF] opacity-30 group-hover:opacity-100 transition duration-700 blur-[2px]"></div>
-        
-        <img 
-          src="assets/img/p1.png" 
+        <div
+          class="absolute -inset-1 rounded-full bg-gradient-to-tr from-accent to-accent opacity-30 group-hover:opacity-100 transition duration-700 blur-[2px]"
+        ></div>
+
+        <img
+          src="assets/img/p1.png"
           alt="Perfil de Alejandro"
           class="relative w-64 h-64 md:w-96 md:h-96 lg:w-[480px] lg:h-[480px] rounded-full object-cover grayscale-[40%] group-hover:grayscale-0 transition-all duration-700 border-2 border-accent/20 shadow-2xl"
-        >
+        />
       </div>
     </div>
   </div>
+  <!-- Scroll indicator -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20">
+  <i class="fas fa-chevron-down scroll-chevron"></i>
+</div>
 </section>

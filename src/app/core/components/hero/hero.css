@@ -40,3 +40,25 @@
   mask-image: radial-gradient(circle at center, black 40%, transparent 95%);
   -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 95%);
 }
+
+.scroll-chevron {
+  font-size: 14px;
+  color: var(--accent);
+  opacity: 0.5;
+  animation: chevronFloat 1.8s infinite;
+}
+
+@keyframes chevronFloat {
+  0% {
+    transform: translateY(0);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.3;
+  }
+}

@@ -1,13 +1,14 @@
-<section id="proyectos" class="relative py-24 min-h-screen">
+<section id="proyectos" class="container relative py-24 min-h-screen">
   <div class="bg-grid-fineline opacity-20"></div>
 
   <div class="container mx-auto px-6 relative z-10">
     <h2 class="mb-12 text-center uppercase tracking-tighter">Proyectos Seleccionados</h2>
+      <div class="bg-grid-fineline opacity-30"></div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       @for (project of projects; track project.id) {
         <div (click)="openModal(project)" 
-             class="project-card group bg-[var(--bg-surface)] border border-[#1A1F26] rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+             class="project-card group bg-[var(--bg-surface)] border border-[var(--grid-color)] rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
           
           <div class="relative overflow-hidden aspect-video">
             <img [src]="project.image" [alt]="project.title" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110">
@@ -29,7 +30,7 @@
   </div>
 
   @if (selectedProject(); as project) {
-    <div class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md transition-all">
+    <div class="container fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md transition-all">
       <div class="bg-[var(--bg-surface)] w-full max-w-4xl max-h-[90vh] rounded-3xl overflow-y-auto border border-white/10 shadow-2xl">
         
         <div class="sticky top-0 z-10 flex justify-end p-4 bg-[var(--bg-surface)]/80 backdrop-blur-sm">

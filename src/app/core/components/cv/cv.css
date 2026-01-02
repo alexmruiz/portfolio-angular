@@ -2,14 +2,15 @@
   display: block;
 }
 
+/* Animación */
 @keyframes fadeInUp {
-  from { 
-    opacity: 0; 
-    transform: translateY(20px); 
+  from {
+    opacity: 0;
+    transform: translateY(24px);
   }
-  to { 
-    opacity: 1; 
-    transform: translateY(0); 
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -17,14 +18,119 @@
   animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-/* Línea de tiempo degradada usando CSS estándar */
-.border-l-2 {
-  border-left: 2px solid #1A1F26;
+/* Header helpers */
+.section-divider {
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3rem;
+  height: 4px;
+  background-color: var(--accent);
+  border-radius: 999px;
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 2px solid var(--grid-color);
 }
 
 @media (min-width: 768px) {
-  .border-l-2 {
-    /* Esto crea el efecto de desvanecimiento en la línea */
-    border-image: linear-gradient(to bottom, #64FFDA, #1A1F26, transparent) 1;
+  .timeline {
+    border-image: linear-gradient(
+      to bottom,
+      var(--accent),
+      var(--grid-color),
+      transparent
+    ) 1;
   }
+}
+
+/* Punto */
+.timeline-dot {
+  position: absolute;
+  top: 0.5rem;
+  left: -0.65rem;
+  width: 0.9rem;
+  height: 0.9rem;
+  background-color: var(--bg-main);
+  border: 2px solid var(--accent);
+  border-radius: 999px;
+  box-shadow: 0 0 8px var(--accent-glow);
+  transition: transform 0.3s ease;
+}
+
+.group:hover .timeline-dot {
+  transform: scale(1.25);
+}
+
+/* Card */
+.timeline-card {
+  margin-left: 1.5rem;
+  background-color: var(--bg-surface);
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s ease;
+}
+
+.timeline-card:hover {
+  border-color: rgba(100, 255, 218, 0.3);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Iconos y año */
+.timeline-icon {
+  color: var(--accent);
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.group:hover .timeline-icon {
+  opacity: 1;
+}
+
+.timeline-year {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.75rem;
+  color: var(--accent);
+}
+
+/* Botón */
+.btn-outline-accent {
+  position: relative;
+  padding: 1rem 2.5rem;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-weight: 700;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.btn-outline-accent::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--accent);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+.btn-outline-accent:hover::before {
+  transform: translateY(0);
+}
+
+.btn-outline-accent:hover {
+  color: var(--bg-main);
+}
+
+.btn-outline-accent > * {
+  position: relative;
+  z-index: 1;
 }

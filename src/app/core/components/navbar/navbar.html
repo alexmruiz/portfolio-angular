@@ -1,34 +1,53 @@
-<nav class="fixed w-full z-50 top-0 start-0">
-  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-    
-      <div class="text-2xl font-bold tracking-tighter text-[#F8F9FA]">
-          AMR<span class="text-[#64FFDA]">.</span>DEV
-      </div>
+<nav class="fixed top-0 left-0 w-full z-50 navbar-glass">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
-    <div [class.hidden]="!isMenuOpen" class="w-full md:flex md:w-auto items-center">
-      <ul class="flex flex-col md:flex-row md:space-x-8 mt-4 md:mt-0 mobile-menu-bg md:bg-transparent">
-        <li>
-          <a href="#inicio" 
-             class="nav-link" 
-             [class.active]="activeSection() === 'inicio'">Inicio</a>
-        </li>
-        <li>
-          <a href="#sobre-mi" 
-             class="nav-link" 
-             [class.active]="activeSection() === 'sobre-mi'">Sobre mí</a>
-        </li>
-        <li>
-          <a href="#proyectos" 
-             class="nav-link" 
-             [class.active]="activeSection() === 'proyectos'">Proyectos</a>
-        </li>
-        <li>
-          <a href="#curriculum" 
-             class="nav-link" 
-             [class.active]="activeSection() === 'curriculum'">Curriculum</a>
-        </li>
-      </ul>
+    <!-- Logo -->
+    <div class="text-2xl font-bold tracking-tighter text-[var(--text-main)] font-[Space Grotesk]">
+      AMR<span class="text-accent">.</span>DEV
     </div>
+
+    <!-- Botón hamburguesa (mobile) -->
+    <button
+      class="md:hidden text-[var(--text-main)]"
+      (click)="toggleMenu()"
+      aria-label="Abrir menú"
+    >
+      <i class="fas fa-bars text-2xl"></i>
+    </button>
+
+    <!-- Menú -->
+    <ul
+      class="nav-container"
+      [class.open]="isMenuOpen"
+    >
+      <li>
+        <a href="#inicio"
+           class="nav-link"
+           [class.active]="activeSection() === 'inicio'"
+           (click)="closeMenu()">Inicio</a>
+      </li>
+
+      <li>
+        <a href="#sobre-mi"
+           class="nav-link"
+           [class.active]="activeSection() === 'sobre-mi'"
+           (click)="closeMenu()">Sobre mí</a>
+      </li>
+
+      <li>
+        <a href="#proyectos"
+           class="nav-link"
+           [class.active]="activeSection() === 'proyectos'"
+           (click)="closeMenu()">Proyectos</a>
+      </li>
+
+      <li>
+        <a href="#curriculum"
+           class="nav-link"
+           [class.active]="activeSection() === 'curriculum'"
+           (click)="closeMenu()">Curriculum</a>
+      </li>
+    </ul>
 
   </div>
 </nav>

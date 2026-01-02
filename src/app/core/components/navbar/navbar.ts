@@ -10,33 +10,36 @@ export class Navbar implements AfterViewInit {
   isMenuOpen = false;
   activeSection = signal<string>('inicio');
 
-ngAfterViewInit() {
-  const options = {
-    root: null,
-    // Con un 10% de visibilidad ya es suficiente para activarlo
-    threshold: 0.1, 
-    // rootMargin: el primer valor (-10% abajo) hace que se active 
-    // justo antes de llegar arriba, evitando el solapamiento.
-    rootMargin: "-10% 0px -70% 0px" 
-  };
+  private sectionIds = ['inicio', 'sobre-mi', 'proyectos', 'curriculum'];
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      // Importante: usamos isIntersecting
-      if (entry.isIntersecting) {
-        this.activeSection.set(entry.target.id);
-        console.log('Sección activa:', entry.target.id);
+  ngAfterViewInit() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            this.activeSection.set(entry.target.id);
+          }
+        });
+      },
+      {
+        root: null,
+        threshold: 0,
+        // Ajustado a navbar ~80px
+        rootMargin: '-80px 0px -60% 0px',
       }
+    );
+
+    this.sectionIds.forEach((id) => {
+      const section = document.getElementById(id);
+      if (section) observer.observe(section);
     });
-  }, options);
+  }
 
-  document.querySelectorAll('section[id]').forEach((section) => {
-    observer.observe(section);
-  });
-}
-
-  // Método opcional para el menú móvil
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu() {
+    this.isMenuOpen = false;
   }
 }

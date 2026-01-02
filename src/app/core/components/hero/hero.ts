@@ -18,3 +18,6 @@ export class Hero {
     { name: 'SQL', icon: 'fas fa-database' }
   ];
 }
+  window.addEventListener('scroll', () => {
+  document.body.classList.toggle('scrolled', window.scrollY > 50);
+});
