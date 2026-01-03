@@ -17,7 +17,7 @@ section {
 /* Ajuste fino para asegurar que el texto no se extienda demasiado */
 p {
   color: var(--text-secondary); /* Gris azulado */
-  max-width: 800px;
+  max-width: 850px;
   margin-left: auto;
   margin-right: auto;
 }

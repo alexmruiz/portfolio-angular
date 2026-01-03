@@ -11,12 +11,12 @@
 
 /* Estilo para los iconos del Stack */
 .tech-icon {
-  color: #B0B8C1; /* Gris azulado sugerido */
+  color: var(--text-secondary); /* Gris azulado sugerido */
   filter: drop-shadow(0 0 0px transparent);
 }
 
 .tech-icon:hover {
-  color: #64FFDA; /* Verde agua vibrante */
+  color: var(--accent); /* Verde agua vibrante */
   transform: translateY(-8px) scale(1.1);
   filter: drop-shadow(0 0 12px rgba(100, 255, 218, 0.5));
 }
@@ -42,7 +42,6 @@
 }
 
 .scroll-chevron {
-  font-size: 14px;
   color: var(--accent);
   opacity: 0.5;
   animation: chevronFloat 1.8s infinite;
