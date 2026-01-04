@@ -7,6 +7,7 @@ interface CVItem {
   description: string;
   type: 'work' | 'education' | 'course';
 }
+
 @Component({
   selector: 'app-cv',
   standalone: true,
@@ -15,29 +16,36 @@ interface CVItem {
   styleUrl: './cv.css'
 })
 export class Cv {
-  // Signal para manejar los datos de forma reactiva
+
   cvData = signal<CVItem[]>([
     {
-      year: '2023 - Actualidad',
-      title: 'Full Stack Developer',
-      subtitle: 'Tech Solutions Inc.',
-      description: 'Desarrollo de microservicios con Spring Boot y frontend reactivo con Angular 20.',
+      year: '11/25 - Actualidad',
+      title: 'Desarrollador Web Full Stack',
+      subtitle: 'BeSoccer Pro',
+      description: 'Desarrollo y mantenimiento de funcionalidades en una plataforma web de alto tráfico, utilizando PHP nativo en el backend y HTML, JavaScript y CSS en el frontend.',
       type: 'work'
     },
     {
-      year: '2021 - 2023',
-      title: 'Grado Superior DAW',
-      subtitle: 'IES Tecnológico',
-      description: 'Especialización en desarrollo de aplicaciones web y despliegue en entornos cloud.',
-      type: 'education'
+      year: '09/24 - 09/25',
+      title: 'Desarrollador Web Full Stack',
+      subtitle: 'Factoría Biz',
+      description: 'Desarrollo de nuevas funcionalidades y mantenimiento de aplicaciones web utilizando Laravel en el backend y Tailwind CSS, Alpine.js y Blade en el frontend.',
+      type: 'work'
     },
     {
-      year: '2023',
-      title: 'Especialista Angular Pro',
-      subtitle: 'Udemy / Google Devs',
-      description: 'Certificación avanzada en signals, SSR y optimización de rendimiento.',
-      type: 'course'
-    }
+      year: '10/22 - 06/24',
+      title: 'Grado Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)',
+      subtitle: 'Cesur',
+      description: 'Formación técnica orientada al desarrollo de aplicaciones multiplataforma, con especial enfoque en Java y bases de la programación backend.',
+      type: 'education'
+    },
+        {
+      year: '10/21 - 04/22',
+      title: 'Prueba de acceso a la universidad para mayores de 25 años',
+      subtitle: '',
+      description: '',
+      type: 'education'
+    },
   ]);
 
   downloadCV() {

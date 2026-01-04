@@ -52,7 +52,7 @@
                 {{ item.subtitle }}
               </span>
 
-              <p class="text-[var(--text-secondary)] opacity-80 leading-relaxed mb-0">
+              <p class="text-[var(--text-secondary)] opacity-80 leading-relaxed mb-0 hidden md:block">
                 {{ item.description }}
               </p>
             </div>
@@ -61,7 +61,6 @@
         }
 
       </div>
-
       <!-- CTA -->
       <div class="flex justify-center mt-12">
         <button
@@ -74,5 +73,50 @@
       </div>
 
     </div>
+    <!-- Skills -->
+<div class="max-w-3xl mx-auto mt-24">
+
+  <h3 class="text-center text-2xl font-bold mb-12 text-[var(--text-main)]">
+    Skills Técnicos
+  </h3>
+
+  <div class="space-y-8">
+
+    <!-- PHP -->
+    <div class="skill">
+      <div class="skill-header">
+        <span>PHP</span>
+        <span>80%</span>
+      </div>
+      <div class="skill-bar">
+        <div class="skill-progress php"></div>
+      </div>
+    </div>
+
+    <!-- Java -->
+    <div class="skill">
+      <div class="skill-header">
+        <span>Java</span>
+        <span>70%</span>
+      </div>
+      <div class="skill-bar">
+        <div class="skill-progress java"></div>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <div class="skill">
+      <div class="skill-header">
+        <span>JavaScript</span>
+        <span>65%</span>
+      </div>
+      <div class="skill-bar">
+        <div class="skill-progress js"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
   </div>
 </section>
