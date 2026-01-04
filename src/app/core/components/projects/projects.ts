@@ -21,7 +21,7 @@ export class Projects {
       shortDesc: 'Control de inventario con Angular y Spring Boot.',
       fullDesc:
         'Solución integral con microservicios, gestión en tiempo real y panel de administración.',
-      image: 'assets/img/p1.png',
+      image: 'assets/img/projects-img/p1.png',
       videoUrl: '8IM5K84q6EM',
       repoUrl: 'https://github.com/alexmruiz/Inventory-backend',
       tech: ['Angular', 'Spring Boot', 'MySQL', 'Docker'],

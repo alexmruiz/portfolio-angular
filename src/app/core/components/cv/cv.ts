@@ -49,6 +49,6 @@ export class Cv {
   ]);
 
   downloadCV() {
-    window.open('assets/pdf/tu-cv.pdf', '_blank');
+    window.open('assets/pdf/CV_Alejandro_Moya_Ruiz.pdf', '_blank');
   }
 }
