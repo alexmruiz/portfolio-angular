@@ -5,7 +5,7 @@
 
 /* Transición suave de entrada al hacer scroll */
 section {
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out; 
 }
 
 /* Resaltado de palabras clave con el color de acento */
@@ -24,7 +24,7 @@ p {
 
 /* Efecto de "vignette" para centrar la atención en el texto */
 section::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   background: radial-gradient(circle at center, transparent 20%, var(--bg-main) 100%);

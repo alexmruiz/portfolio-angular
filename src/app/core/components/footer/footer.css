@@ -4,8 +4,13 @@
 
 /* Efecto de pulso suave para el corazón */
 @keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.2); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
 }
 
 .animate-pulse {
@@ -22,7 +27,7 @@ span.absolute::after {
   margin-left: -4px;
   border-width: 4px;
   border-style: solid;
-  border-color: #161B22 transparent transparent transparent;
+  border-color: #161b22 transparent transparent transparent;
 }
 
 /* Transición suave para todos los iconos */

@@ -1,8 +1,7 @@
-<section id="curriculum" class="relative  py-20 sm:py-28 md:py-32 min-h-screen">
+<section id="curriculum" class="relative py-20 sm:py-28 md:py-32 min-h-screen">
   <div class="bg-grid-fineline opacity-20"></div>
 
   <div class="container mx-auto px-6 relative z-10">
-
     <!-- Header -->
     <div class="flex flex-col items-center text-center mb-20">
       <div class="relative inline-block">
@@ -17,106 +16,104 @@
     <!-- Timeline -->
     <div class="max-w-4xl mx-auto">
       <div class="timeline space-y-12 pb-12">
-
         @for (item of cvData(); track $index) {
-          <article
-            class="relative group animation-fade-in"
-            [style.animation-delay]="$index * 0.15 + 's'"
-          >
+        <article
+          class="relative group animation-fade-in"
+          [style.animation-delay]="$index * 0.15 + 's'"
+        >
+          <!-- Punto -->
+          <span class="timeline-dot"></span>
 
-            <!-- Punto -->
-            <span class="timeline-dot"></span>
-
-            <!-- Card -->
-            <div class="timeline-card">
-              <header class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
-                <div class="flex items-center gap-3">
-                  <i
-                    [class]="item.type === 'work'
+          <!-- Card -->
+          <div class="timeline-card">
+            <header class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
+              <div class="flex items-center gap-3">
+                <i
+                  [class]="
+                    item.type === 'work'
                       ? 'fas fa-briefcase'
                       : item.type === 'education'
                       ? 'fas fa-graduation-cap'
-                      : 'fas fa-certificate'"
-                    class="timeline-icon"
-                  ></i>
+                      : 'fas fa-certificate'
+                  "
+                  class="timeline-icon"
+                ></i>
 
-                  <h3 class="text-xl md:text-2xl font-bold text-[var(--text-main)]">
-                    {{ item.title }}
-                  </h3>
-                </div>
+                <h3 class="text-xl md:text-2xl font-bold text-[var(--text-main)]">
+                  {{ item.title }}
+                </h3>
+              </div>
 
-                <span class="timeline-year">{{ item.year }}</span>
-              </header>
+              <span class="timeline-year">{{ item.year }}</span>
+            </header>
 
-              <span class="block font-medium mb-3 text-[var(--text-secondary)]">
-                {{ item.subtitle }}
-              </span>
+            <span class="block font-medium mb-3 text-[var(--text-secondary)]">
+              {{ item.subtitle }}
+            </span>
 
-              <p class="text-[var(--text-secondary)] opacity-80 leading-relaxed mb-0 hidden md:block">
-                {{ item.description }}
-              </p>
-            </div>
-
-          </article>
+            <p class="text-[var(--text-secondary)] opacity-80 leading-relaxed mb-0 hidden md:block">
+              {{ item.description }}
+            </p>
+          </div>
+        </article>
         }
-
       </div>
       <!-- CTA -->
       <div class="flex justify-center mt-12">
-        <button
-          (click)="downloadCV()"
-          class="btn-outline-accent"
-        >
+        <button (click)="downloadCV()" class="btn-outline-accent">
           <i class="fas fa-download mr-2"></i>
           Descargar Full CV (PDF)
         </button>
       </div>
-
     </div>
     <!-- Skills -->
-<div class="max-w-3xl mx-auto mt-24">
+    <div class="max-w-3xl mx-auto mt-28">
+      <h3 class="text-center text-2xl font-bold mb-14 text-[var(--text-main)]">Skills Técnicos</h3>
 
-  <h3 class="text-center text-2xl font-bold mb-12 text-[var(--text-main)]">
-    Skills Técnicos
-  </h3>
+      <div class="space-y-10">
+        <!-- Skill -->
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="flex items-center gap-3">
+              <i class="fab fa-php text-xl skill-icon php"></i>
+              <span>PHP</span>
+            </div>
+            <span class="skill-percent">80%</span>
+          </div>
 
-  <div class="space-y-8">
+          <div class="skill-bar">
+            <div class="skill-progress php" style="--value: 80%"></div>
+          </div>
+        </div>
 
-    <!-- PHP -->
-    <div class="skill">
-      <div class="skill-header">
-        <span>PHP</span>
-        <span>80%</span>
-      </div>
-      <div class="skill-bar">
-        <div class="skill-progress php"></div>
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="flex items-center gap-3">
+              <i class="fab fa-java text-xl skill-icon java"></i>
+              <span>Java</span>
+            </div>
+            <span class="skill-percent">70%</span>
+          </div>
+
+          <div class="skill-bar">
+            <div class="skill-progress java" style="--value: 70%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="flex items-center gap-3">
+              <i class="fab fa-js text-xl skill-icon js"></i>
+              <span>JavaScript</span>
+            </div>
+            <span class="skill-percent">65%</span>
+          </div>
+
+          <div class="skill-bar">
+            <div class="skill-progress js" style="--value: 65%"></div>
+          </div>
+        </div>
       </div>
     </div>
-
-    <!-- Java -->
-    <div class="skill">
-      <div class="skill-header">
-        <span>Java</span>
-        <span>70%</span>
-      </div>
-      <div class="skill-bar">
-        <div class="skill-progress java"></div>
-      </div>
-    </div>
-
-    <!-- JavaScript -->
-    <div class="skill">
-      <div class="skill-header">
-        <span>JavaScript</span>
-        <span>65%</span>
-      </div>
-      <div class="skill-bar">
-        <div class="skill-progress js"></div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
   </div>
 </section>
