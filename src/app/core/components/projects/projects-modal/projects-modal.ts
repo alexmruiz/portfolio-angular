@@ -21,4 +21,24 @@ export class ProjectsModal {
         )
       : null;
   }
+  get hasVideo(): boolean {
+    return !!this.project.videoUrl;
+  }
+
+  get hasImages(): boolean {
+    return !!this.project.images?.length;
+  }
+
+  activeSlide = 0;
+
+  next() {
+    if (!this.project.images) return;
+    this.activeSlide = (this.activeSlide + 1) % this.project.images.length;
+  }
+
+  prev() {
+    if (!this.project.images) return;
+    this.activeSlide =
+      (this.activeSlide - 1 + this.project.images.length) % this.project.images.length;
+  }
 }

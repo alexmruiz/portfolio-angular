@@ -12,23 +12,73 @@
     <!-- CONTENIDO DEL MODAL (SCROLL) -->
     <div class="max-h-[70vh] overflow-y-auto modal-scroll p-8 space-y-8">
       <div class="aspect-video rounded-2xl overflow-hidden bg-black">
-        @if (videoUrl) {
-        <iframe [src]="videoUrl" class="w-full h-full" allowfullscreen></iframe>
+        @if (hasVideo && videoUrl) {
+        <!-- VIDEO -->
+        <iframe [src]="videoUrl" class="w-full h-full" allowfullscreen> </iframe>
+        } @else if (hasImages) {
+        <!-- CAROUSEL -->
+        <div class="relative overflow-hidden">
+          <div
+            class="flex transition-transform duration-500"
+            [style.transform]="'translateX(-' + activeSlide * 100 + '%)'"
+          >
+            @for (img of project.images; track img) {
+            <img [src]="img" class="w-full flex-shrink-0 object-cover" />
+            }
+          </div>
+
+          <!-- CONTROLES -->
+          <button (click)="prev()" class="carousel-btn left-3">‹</button>
+          <button (click)="next()" class="carousel-btn right-3">›</button>
+        </div>
         } @else {
+        <!-- FALLBACK -->
         <img [src]="project.image" class="w-full h-full object-cover" />
         }
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div class="lg:col-span-2 space-y-4">
-          <h2 class="text-3xl font-bold">{{ project.title }}</h2>
-          <p class="text-lg text-[var(--text-secondary)]">
-            {{ project.fullDesc }}
+        <!-- CONTENIDO PRINCIPAL -->
+        <div class="lg:col-span-2 space-y-6">
+          <h2 class="text-3xl font-bold">
+            {{ project.title }}
+          </h2>
+
+          <!-- Overview -->
+          <p class="text-lg text-[var(--text-secondary)] leading-relaxed">
+            {{ project.overview }}
           </p>
+
+          <!-- Features -->
+          <div>
+            <h3 class="text-sm uppercase tracking-widest text-accent mb-3">Funcionalidades</h3>
+
+            <ul class="space-y-2">
+              @for (f of project.features; track f) {
+              <li class="flex gap-3 text-[var(--text-secondary)]">
+                <span class="text-accent">▸</span>
+                <span>{{ f }}</span>
+              </li>
+              }
+            </ul>
+          </div>
+
+          <!-- Arquitectura -->
+          <div>
+            <h3 class="text-sm uppercase tracking-widest text-accent mb-3">
+              Arquitectura & Despliegue
+            </h3>
+
+            <p class="text-[var(--text-secondary)] leading-relaxed">
+              {{ project.architecture }}
+            </p>
+          </div>
         </div>
 
+        <!-- SIDEBAR -->
         <div class="space-y-6">
-          <div class="p-6 rounded-2xl bg-white/5 border border-white/5">
+          <!-- Tecnologías -->
+          <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
             <span class="text-xs uppercase tracking-widest text-accent block mb-4">
               Tecnologías
             </span>
@@ -42,13 +92,22 @@
             </div>
           </div>
 
-          <a
-            [href]="project.repoUrl"
-            target="_blank"
-            class="group relative block w-full text-center py-4 rounded-xl font-semibold bg-accent text-[var(--bg-main)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_12px_30px_var(--accent-glow)] focus:outline-none focus:ring-2 focus:ring-accent/50"
-          >
-            Ver Repositorio
-          </a>
+          <!-- Botones -->
+          @if (project.frontendRepo) {
+          <!-- <a [href]="project.frontendRepo" target="_blank" class="btn-primary"> Ver Frontend </a> -->
+          <button class="btn-outline-accent">
+            <i class="fas fa-code mr-2"></i>
+            Ver Frontend
+          </button>
+          } @if (project.backendRepo) {
+          <!-- <a [href]="project.backendRepo" target="_blank" class="btn-outline-accent">
+            Ver Backend
+          </a> -->
+          <button class="btn-outline-accent">
+            <i class="fas fa-code-branch mr-2"></i>
+            Ver Backend
+          </button>
+          }
         </div>
       </div>
     </div>
