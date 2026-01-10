@@ -109,7 +109,7 @@ export class Projects {
         'Aplicación monolítica desarrollada con Laravel, utilizando Blade y componentes Livewire 3 para implementar funcionalidades reactivas en el frontend. La persistencia de datos se realiza con MySQL, la generación de documentos PDF mediante Dompdf y la visualización de estadísticas con Chart.js. El proyecto está orientado a servir como base para una tienda online funcional y extensible.',
 
       image: 'assets/img/projects-img/imgEcomerce/publico.png',
-      videoUrl:' t7v3UFn1XV0?si=ynS9qD9AZizhNSyV',
+      videoUrl:'t7v3UFn1XV0?si=ynS9qD9AZizhNSyV',
       frontendRepo: undefined, // no aplica en monolito
       backendRepo: 'https://github.com/alexmruiz/Shop_Online',
 
