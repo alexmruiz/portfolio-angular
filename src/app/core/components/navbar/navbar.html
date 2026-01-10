@@ -5,22 +5,33 @@
       AMR<span class="text-accent">.</span>DEV
     </div>
 
-    <!-- Botón hamburguesa (mobile) -->
-    <button
-      class="md:hidden text-[var(--text-main)]"
-      (click)="toggleMenu()"
-      aria-label="Abrir menú"
-    >
-      <i class="fas fa-bars text-2xl"></i>
-    </button>
+    <div class="flex items-center gap-4">
+      <!-- Contacto (mobile icon) -->
+      <a
+        href="mailto:alexmyruizv@gmail.com"
+        class="md:hidden text-accent hover:opacity-80 transition"
+        aria-label="Enviar email"
+      >
+        <i class="fas fa-envelope text-xl"></i>
+      </a>
+
+      <!-- Botón hamburguesa -->
+      <button
+        class="md:hidden text-[var(--text-main)]"
+        (click)="toggleMenu()"
+        aria-label="Abrir menú"
+      >
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
 
     <!-- Menú -->
     <ul class="nav-container" [class.open]="isMenuOpen">
       <li>
         <a
-          href="#inicio"
+          href="#home"
           class="nav-link"
-          [class.active]="activeSection() === 'inicio'"
+          [class.active]="activeSection() === 'home'"
           (click)="closeMenu()"
           >Home</a
         >
@@ -54,6 +65,16 @@
           (click)="closeMenu()"
           >Curriculum</a
         >
+      </li>
+      <li>
+        <a
+          href="mailto:alexmyruiz@gmail.com"
+          title="Contacto directo por email"
+          class="nav-contact px-5 py-2 hidden md:block"
+        >
+        <i class="fas fa-envelope text-xl"></i>
+          Contactar
+        </a>
       </li>
     </ul>
   </div>

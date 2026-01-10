@@ -49,3 +49,40 @@
   text-shadow: 0 0 12px var(--accent-glow);
   font-weight: 600;
 }
+
+/*Estilos para el botón de contacto*/
+.nav-container li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-contact {
+  position: relative;
+  font-family: 'Fira Code', monospace;
+  font-size: 13px;
+  letter-spacing: 1.2px;
+  color: var(--text-secondary);
+  padding: 0.25rem 0;
+  transition: color 0.3s ease;
+}
+
+/* Línea inferior sutil */
+.nav-contact::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 1px;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
+/* Hover elegante */
+.nav-contact:hover {
+  color: var(--accent);
+}
+
+.nav-contact:hover::after {
+  width: 100%;
+}

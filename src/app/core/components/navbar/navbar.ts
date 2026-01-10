@@ -8,9 +8,9 @@ import { Component, AfterViewInit, signal } from '@angular/core';
 })
 export class Navbar implements AfterViewInit {
   isMenuOpen = false;
-  activeSection = signal<string>('inicio');
+  activeSection = signal<string>('home');
 
-  private sectionIds = ['inicio', 'sobre-mi', 'proyectos', 'curriculum'];
+  private sectionIds = ['home', 'sobre-mi', 'proyectos', 'curriculum'];
 
   ngAfterViewInit() {
     const observer = new IntersectionObserver(
