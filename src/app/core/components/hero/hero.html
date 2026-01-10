@@ -1,17 +1,17 @@
 <section
-  class="relative min-h-screen flex items-center justify-center sm:py-14 lg:py-20"
+  class="relative min-h-screen flex items-center justify-center py-16 sm:py-18 lg:py-20"
   id="home"
 >
   <div class="absolute inset-0 bg-grid-fineline z-0"></div>
 
   <div
-    class="relative z-10 max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 items-center"
+    class="relative z-10 max-w-sm sm:max-w-2xl lg:max-w-6xl xl:max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-12 items-center"
   >
     <!-- Columna izquierda -->
     <div class="order-2 md:order-1 space-y-8 text-center md:text-left md:mt-0">
       <header class="space-y-4">
         <h1
-          class="flex flex-col font-extrabold tracking-tighter leading-[0.85] text-5xl md:text-6xl lg:text-8xl"
+          class="flex flex-col font-extrabold tracking-tighter leading-[0.85] text-5xl md:text-5xl lg:text-7xl xl:text-8xl"
         >
           <span class="uppercase opacity-80">Full Stack</span>
           <span class="text-accent uppercase">Developer</span>
@@ -24,7 +24,7 @@
           <i
             [class]="tech.icon"
             aria-label="{{ tech.name }}"
-            class="text-4xl md:text-4xl transition-all duration-300 cursor-help tech-icon lg:mr-4"
+            class="text-4xl md:text-3xl transition-all duration-300 cursor-help tech-icon lg:mr-4"
           ></i>
           <span
             class="absolute -bottom-8 text-[10px] uppercase tracking-widest text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -48,8 +48,8 @@
         <img
           src="assets/img/profile.png"
           alt="Perfil de usuario"
-          class="relative -translate-y-10 sm:translate-y-4 md:translate-y-8 lg:translate-y-2 
-          w-72 h-72 sm:w-80 sm:h-80 md:w-88 md:h-88 lg:w-[420px] lg:h-[420px] xl:w-[480px] xl:h-[480px] 2xl:w-[500px] 2xl:h-[500px] 
+          class="relative -translate-y-10 sm:translate-y-4 md:translate-y-1 lg:translate-y-2 
+          w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[420px] lg:h-[420px] xl:w-[450px] xl:h-[450px]  
           rounded-full object-cover grayscale-[40%] group-hover:grayscale-0 border-2 border-accent/20 shadow-2xl transition-all duration-700 
           lg:group-hover:scale-[1.03]"
         />
@@ -60,13 +60,12 @@
   <!-- Scroll indicator -->
   <div
     class="absolute left-1/2 -translate-x-1/2 z-20 transition-all duration-500
-    bottom-20       
-    sm:bottom-16
-    md:bottom-10"
+    bottom-2      
+    xl:bottom-5"
     [class.opacity-0]="isScrolled()"
     [class.pointer-events-none]="isScrolled()"
     [class.translate-y-10]="isScrolled()"
   >
-    <i class="fas fa-angles-down scroll-chevron text-xl lg:text-2xl"></i>
+    <i class="fas fa-angles-down scroll-chevron text-xl md:text-2xl"></i>
   </div>
 </section>

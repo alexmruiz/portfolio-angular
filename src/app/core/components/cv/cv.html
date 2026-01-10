@@ -1,20 +1,20 @@
 <section id="curriculum" class="relative py-20 sm:py-28 md:py-32 min-h-screen">
   <div class="bg-grid-fineline opacity-20"></div>
 
-  <div class="container mx-auto px-6 relative z-10">
+  <div class="max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto relative z-10">
     <!-- Header -->
-    <div class="flex flex-col items-center text-center mb-20">
+    <div class="flex flex-col items-center text-center mb-10 sm:mb-20">
       <div class="relative inline-block">
         <h2 class="section-title">Trayectoria</h2>
         <div class="section-divider"></div>
       </div>
-      <p class="mt-6 text-sm font-mono opacity-70 text-accent">
+      <p class="mt-8 text-sm font-mono opacity-70 text-accent">
         // Formación y Experiencia Profesional
       </p>
     </div>
 
     <!-- Timeline -->
-    <div class="max-w-4xl mx-auto">
+    <div class=" mx-auto">
       <div class="timeline space-y-12 pb-12">
         @for (item of cvData(); track $index) {
         <article
@@ -44,7 +44,7 @@
                 </h3>
               </div>
 
-              <span class="timeline-year">{{ item.year }}</span>
+              <span class="timeline-year text-center">{{ item.year }}</span>
             </header>
 
             <span class="block font-medium mb-3 text-[var(--text-secondary)]">

@@ -100,40 +100,59 @@ code, .tech-icon-label {
   box-shadow: 0 0 12px var(--accent-glow);
 }
 
-/* Botón */
+/* Botón Principal (Funciona para <button> y <a>) */
 .btn-outline-accent {
   position: relative;
-  padding: 1rem 2.5rem;
+  /* Cambio clave: inline-flex para que el link acepte padding y alinee iconos */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  padding: 0.8rem 2rem; /* Un poco más estilizado */
   border: 1px solid var(--accent);
   color: var(--accent);
   font-weight: 700;
+  font-size: 16px;
+  text-decoration: none; /* Quita el subrayado si es un <a> */
   border-radius: 0.75rem;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Transición más suave */
   background: transparent;
+  cursor: pointer;
+  z-index: 1;
 }
 
+/* El relleno que sube */
 .btn-outline-accent::before {
   content: '';
   position: absolute;
   inset: 0;
   background-color: var(--accent);
   transform: translateY(100%);
-  transition: transform 0.3s ease;
-  z-index: 0;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1; /* Cambiado a -1 para no tapar el texto */
+}
+
+/* Mejoras de Hover */
+.btn-outline-accent:hover {
+  color: var(--bg-main) !important; /* Forzamos el contraste con el fondo nuevo */
+  box-shadow: 0 0 20px var(--accent-glow); /* Efecto Neón */
+  transform: translateY(-2px); /* Pequeño salto hacia arriba */
 }
 
 .btn-outline-accent:hover::before {
   transform: translateY(0);
 }
 
-.btn-outline-accent:hover {
-  color: var(--bg-main);
+/* Efecto activo (clic) */
+.btn-outline-accent:active {
+  transform: translateY(0);
 }
 
-.btn-outline-accent > * {
-  position: relative;
-  z-index: 1;
+/* Asegura que si hay un icono dentro, se vea bien */
+.btn-outline-accent i {
+  margin-right: 8px;
+  font-size: 1.1rem;
 }
 
 

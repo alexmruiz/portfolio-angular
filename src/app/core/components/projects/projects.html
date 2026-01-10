@@ -1,12 +1,12 @@
-<section id="proyectos" class="relative py-20 sm:py-28 md:py-32 min-h-screen">
-  <div class="container mx-auto px-6">
+<section id="proyectos" class="relative py-24 sm:py-28 md:py-32 min-h-screen">
+  <div class="mx-auto px-2 max-w-xs md:max-w-3xl xl:max-w-7xl lg:px-0">
     <div class="relative flex flex-col items-center mb-20">
       <h2 class="section-title text-center uppercase tracking-tighter">Proyectos Seleccionados</h2>
 
       <div class="section-divider"></div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:max-w-6xl 2xl:max-w-7xl mx-auto">
       @for (project of projects; track project.id) {
       <app-project-card [project]="project" (select)="open(project)" />
       }
