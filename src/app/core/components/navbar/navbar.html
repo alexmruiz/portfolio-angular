@@ -2,7 +2,11 @@
   <div class="max-w-sm md:max-w-3xl lg:max-w-5xl xl:max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
     <!-- Logo -->
     <div class="text-2xl font-bold tracking-tighter text-[var(--text-main)] font-[Space Grotesk]">
-      AmR<span class="text-accent">.</span>DEV
+      <a
+          href="#home"
+          >AmR<span class="text-accent">.</span>DEV</a
+        >
+      
     </div>
 
     <div class="flex items-center gap-4">
@@ -27,16 +31,6 @@
 
     <!-- Menú -->
     <ul class="nav-container" [class.open]="isMenuOpen">
-      <li>
-        <a
-          href="#home"
-          class="nav-link"
-          [class.active]="activeSection() === 'home'"
-          (click)="closeMenu()"
-          >Home</a
-        >
-      </li>
-
       <li>
         <a
           href="#sobre-mi"
