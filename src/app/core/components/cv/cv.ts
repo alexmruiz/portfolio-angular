@@ -22,7 +22,7 @@ export class Cv {
       title: 'Desarrollador Web Full Stack',
       subtitle: 'BeSoccer Pro',
       description:
-        'Desarrollo y mantenimiento de funcionalidades en una plataforma web de alto tráfico, utilizando PHP vanilla en el backend y HTML, jQuery y CSS en el frontend.',
+        'Desarrollo y mantenimiento de funcionalidades para una plataforma web de alto tráfico, trabajando con PHP nativo en backend y HTML, jQuery y CSS en frontend.',
       type: 'work',
     },
     {
