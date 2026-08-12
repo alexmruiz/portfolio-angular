@@ -18,11 +18,11 @@ interface CVItem {
 export class Cv {
   cvData = signal<CVItem[]>([
     {
-      year: '11/25 - Actualidad',
+      year: '11/25 - 08/26',
       title: 'Desarrollador Web Full Stack',
       subtitle: 'BeSoccer Pro',
       description:
-        'Desarrollo y mantenimiento de funcionalidades en una plataforma web de alto tráfico, utilizando PHP nativo en el backend y HTML, JavaScript y CSS en el frontend.',
+        'Desarrollo y mantenimiento de funcionalidades en una plataforma web de alto tráfico, utilizando PHP vanilla en el backend y HTML, jQuery y CSS en el frontend.',
       type: 'work',
     },
     {
