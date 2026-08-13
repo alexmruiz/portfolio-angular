@@ -43,3 +43,8 @@ Thumbs.db
 
 .assets/
 .github
+
+# Firebase
+.firebase/
+.firebaserc
+firebase.json
