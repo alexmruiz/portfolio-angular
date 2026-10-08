@@ -10,12 +10,12 @@ import { Component, HostListener, signal } from '@angular/core';
 export class Hero {
   // Definimos el stack para que sea fácil de actualizar
   techStack = [
-    { name: 'Java', icon: 'fab fa-java' },
-    { name: 'Spring Boot', icon: 'fas fa-leaf' },
-    { name: 'PHP', icon: 'fab fa-php' },
-    { name: 'Angular', icon: 'fab fa-angular' },
-    { name: 'JavaScript', icon: 'fab fa-js' },
-    { name: 'SQL', icon: 'fas fa-database' },
+    { name: 'Java', icon: 'fa-brands fa-java' },
+    { name: 'Spring Boot', icon: 'fa-solid fa-leaf' },
+    { name: 'PHP', icon: 'fa-brands fa-php' },
+    { name: 'Angular', icon: 'fa-brands fa-angular' },
+    { name: 'JavaScript', icon: 'fa-brands fa-js' },
+    { name: 'SQL', icon: 'fa-solid fa-database' },
   ];
 
   isScrolled = signal(false);

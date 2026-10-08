@@ -113,7 +113,7 @@ export class Projects {
       frontendRepo: undefined, // no aplica en monolito
       backendRepo: 'https://github.com/alexmruiz/Shop_Online',
 
-      tech: ['PHP', 'Laravel', 'Livewire 3', 'Blade', 'MySQL', 'Chart.js', 'Dompdf'],
+      tech: ['PHP', 'Laravel', 'Livewire 3', 'Blade', 'MySQL', 'Chart.js', 'Dompdf', 'Lang', 'Laravel Cashier', 'Test'],
     },
   ];
 

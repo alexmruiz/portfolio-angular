@@ -1,9 +1,8 @@
+@import '@fortawesome/fontawesome-free/css/all.css';
 @import "tailwindcss";
 
 /* 1. IMPORTACIÓN DE FUENTES */
 /* Space Grotesk (Títulos), Inter (Cuerpo) y Fira Code (Monospaced/Tech) */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@600;800&family=Fira+Code&display=swap');
-@import "@fortawesome/fontawesome-free/css/all.css";
 
 :root {
   /* Fondo y Superficies */

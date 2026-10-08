@@ -18,11 +18,11 @@ interface CVItem {
 export class Cv {
   cvData = signal<CVItem[]>([
     {
-      year: '11/25 - Actualidad',
+      year: '11/25 - 08/26',
       title: 'Desarrollador Web Full Stack',
       subtitle: 'BeSoccer Pro',
       description:
-        'Desarrollo y mantenimiento de funcionalidades en una plataforma web de alto tráfico, utilizando PHP nativo en el backend y HTML, JavaScript y CSS en el frontend.',
+        'Desarrollo y mantenimiento de funcionalidades para una plataforma web de alto tráfico, trabajando con PHP nativo en backend y HTML, jQuery y CSS en frontend.',
       type: 'work',
     },
     {
@@ -51,6 +51,6 @@ export class Cv {
   ]);
 
   downloadCV() {
-    window.open('assets/pdf/CV_Alejandro_Moya_Ruiz.pdf', '_blank');
+    window.open('assets/pdf/CV_ALEJANDRO_MOYA_RUIZ.pdf', '_blank');
   }
 }
