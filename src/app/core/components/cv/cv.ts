@@ -26,8 +26,8 @@ export class Cv {
       type: 'work',
     },
     {
-      year: '09/24 - 09/25',
-      title: 'Desarrollador Web Full Stack',
+      year: '06/24 - 09/25',
+      title: 'Desarrollador Web Full Java y PHP',
       subtitle: 'Factoría Biz',
       description:
         'Desarrollo de nuevas funcionalidades y mantenimiento de aplicaciones web utilizando Laravel en el backend y Tailwind CSS, Alpine.js y Blade en el frontend.',
@@ -44,7 +44,7 @@ export class Cv {
     {
       year: '10/21 - 04/22',
       title: 'Prueba de acceso a la universidad para mayores de 25 años',
-      subtitle: '',
+      subtitle: 'Universidad de Málaga',
       description: '',
       type: 'education',
     },
