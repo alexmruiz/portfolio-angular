@@ -1,5 +1,4 @@
 import { Component, signal } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Project } from './models/project.model';
 import { ProjectCardComponent } from './projects-card/projects-card';
 import { ProjectsModal } from './projects-modal/projects-modal';
