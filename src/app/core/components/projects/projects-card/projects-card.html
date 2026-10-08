@@ -1,10 +1,10 @@
 <div
   (click)="select.emit()"
-  class="group cursor-pointer rounded-2xl overflow-hidden bg-[var(--bg-surface)]
+  class="group flex h-full cursor-pointer flex-col overflow-hidden rounded-2xl bg-[var(--bg-surface)]
          border border-[var(--grid-color)]
          transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl"
 >
-  <div class="aspect-video relative overflow-hidden">
+  <div class="relative aspect-video shrink-0 overflow-hidden">
     <img
       [src]="project.image"
       [alt]="project.title"
@@ -13,21 +13,27 @@
     <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
   </div>
 
-  <div class="p-6 space-y-3">
-    <h3 class="text-xl font-bold">{{ project.title }}</h3>
-    <p class="text-sm text-[var(--text-secondary)] line-clamp-2">
+  <div class="flex flex-1 flex-col gap-3 p-6">
+    <h3 class="line-clamp-2 min-h-14 text-xl font-bold">{{ project.title }}</h3>
+    <p class="min-h-10 line-clamp-2 text-sm text-[var(--text-secondary)]">
       {{ project.shortDesc }}
     </p>
 
-    <div class="flex flex-wrap gap-2 pt-2">
-      @for (t of project.tech; track t) {
+    <div class="mt-auto flex min-h-14 flex-wrap content-start gap-2 pt-2">
+      @for (t of project.tech.slice(0, 4); track t) {
         <span
-          class="px-3 py-1 rounded-full text-[10px] uppercase bg-white/5 border border-white/10"
+          class="whitespace-nowrap rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] uppercase"
         >
           {{ t }}
+        </span>
+      }
+      @if (project.tech.length > 4) {
+        <span
+          class="whitespace-nowrap rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] text-[var(--text-secondary)]"
+        >
+          +{{ project.tech.length - 4 }} más
         </span>
       }
     </div>
   </div>
 </div>
-
