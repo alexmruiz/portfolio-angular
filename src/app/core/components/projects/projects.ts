@@ -43,47 +43,75 @@ export class Projects {
 
       tech: ['Java 17', 'Spring Boot', 'Angular', 'MySQL', 'Keycloak', 'Docker', 'GCP'],
     },
-    // Reserva hoteles
+    // StayBook
     {
       id: 2,
-      title: 'Aplicación de Reservas de Hoteles',
-      shortDesc: 'Sistema full stack de reservas basado en microservicios.',
+      title: 'StayBook · Plataforma Backend de Reservas Hoteleras',
+      shortDesc: 'Plataforma backend de reservas hoteleras construida con Java y Spring Boot.',
 
       overview:
-        'Aplicación web full stack de reservas de hoteles desarrollada desde cero, orientada a la construcción de una arquitectura basada en microservicios escalables y mantenibles.',
+        'StayBook modela el flujo de reservas hoteleras mediante microservicios independientes para el catálogo, la disponibilidad y las reservas, las valoraciones y los usuarios. El proyecto pone el foco en límites de servicio claros, comunicación HTTP, seguridad basada en JWT y contratos REST documentados con OpenAPI. Es un proyecto de portfolio en evolución: sus capacidades actuales se distinguen de los requisitos pendientes para un despliegue productivo.',
 
       features: [
-        'Gestión de hoteles, usuarios y reservas mediante microservicios independientes',
-        'Uso de procedimientos almacenados en MySQL para operaciones de negocio',
-        'Documentación de APIs REST con OpenAPI y Swagger',
-        'Contenerización de microservicios y base de datos mediante Docker',
-        'Integración completa entre frontend y backend mediante APIs REST',
+        'Hotels: catálogo de hoteles, ciudades y servicios; integra reseñas y valoraciones',
+        'Booking: disponibilidad y ciclo de vida de reservas, asociadas al usuario autenticado',
+        'Reviews: gestión de reseñas y resúmenes de valoraciones por hotel',
+        'Auth: registro, inicio de sesión con JWT y gestión del perfil propio',
+        'Gateway: enrutamiento y validación de JWT; la importación de ciudades requiere ROLE_ADMIN',
+        'Config Server: configuración externa para los servicios que la habilitan',
+        'API REST documentada con OpenAPI; pruebas con JUnit, Spring Boot Test y H2',
       ],
 
       architecture:
-        'Backend distribuido desarrollado con Spring Boot y arquitectura de microservicios, utilizando MySQL como sistema de persistencia y procedimientos almacenados para la lógica de negocio. Frontend construido con Angular y SCSS, con una interfaz moderna y completamente responsiva. El proyecto fue desarrollado siguiendo metodología SCRUM y buenas prácticas de diseño, documentación y despliegue.',
+        'Microservicios Java independientes detrás de un Gateway, con bases de datos aisladas y comunicación HTTP. La configuración y el despliegue descritos corresponden al estado de desarrollo del proyecto.',
 
-      image: 'assets/img/projects-img/imgHotels/buscador.png',
+      architectureSections: [
+        {
+          title: 'Servicios y puertos',
+          description:
+            'Gateway 8090 · Hotels 8080 · Reviews 8081 · Booking 8082 · Auth 8083 · Config Server 8888.',
+        },
+        {
+          title: 'Datos y comunicación',
+          description:
+            'Cada servicio de dominio tiene su propia base PostgreSQL: hotels_db, reviews_db, booking_db y auth_db. Booking consulta Hotels y Reviews con RestClient; Hotels consulta Reviews con OpenFeign. Las entidades JPA y los datos no se comparten entre servicios.',
+        },
+        {
+          title: 'Seguridad y documentación',
+          description:
+            'El Gateway requiere un Bearer JWT salvo para registro e inicio de sesión. La importación de ciudades requiere ROLE_ADMIN. Las API cuentan con contratos OpenAPI y Swagger UI; Resilience4j aporta tolerancia a fallos.',
+        },
+        {
+          title: 'Estado de desarrollo',
+          description:
+            'Config Server es opcional en los servicios que lo declaran. Hotels, Booking y Reviews usan ddl-auto=create-drop; Auth usa update. Hay Dockerfiles para Hotels y Reviews, pero no una orquestación completa. Antes de producción faltan migraciones versionadas, gestión segura de secretos y despliegue integral. GitHub Actions ejecuta Maven verify y SonarCloud, que requiere el secreto SONAR_TOKEN.',
+        },
+      ],
+
+      image: 'assets/img/projects-img/imgStaybook/booking.png',
       images: [
-        'assets/img/projects-img/imgHotels/buscador.png',
-        'assets/img/projects-img/imgHotels/lista_hoteles.png',
+        'assets/img/projects-img/imgStaybook/booking.png',
+        'assets/img/projects-img/imgStaybook/amenities.png',
+        'assets/img/projects-img/imgStaybook/reviews.png',
+        'assets/img/projects-img/imgStaybook/diagrama_staybook.png',
       ],
       videoUrl: undefined, // opcional si no tienes demo
 
-      frontendRepo: 'https://github.com/alexmruiz/front-hotels',
-      backendRepo: 'https://github.com/alexmruiz/Microservicio-hotels',
+      backendRepo: 'https://github.com/alexmruiz/staybook-microservices',
 
       tech: [
-        'Java',
+        'Java 21',
         'Spring Boot',
-        'Microservicios',
-        'MySQL',
-        'Stored Procedures',
-        'OpenAPI',
-        'Docker',
-        'Angular',
-        'SCSS',
-        'SCRUM',
+        'Spring Cloud',
+        'Spring Web + Validation',
+        'Spring Data JPA',
+        'PostgreSQL',
+        'Spring Security + JWT',
+        'Gateway + OpenFeign + RestClient',
+        'Resilience4j',
+        'Springdoc OpenAPI',
+        'JUnit + Spring Boot Test + H2',
+        'GitHub Actions + SonarCloud',
       ],
     },
     // Tienda AmR Laravel 
@@ -109,7 +137,7 @@ export class Projects {
         'Aplicación monolítica desarrollada con Laravel, utilizando Blade y componentes Livewire 3 para implementar funcionalidades reactivas en el frontend. La persistencia de datos se realiza con MySQL, la generación de documentos PDF mediante Dompdf y la visualización de estadísticas con Chart.js. El proyecto está orientado a servir como base para una tienda online funcional y extensible.',
 
       image: 'assets/img/projects-img/imgEcomerce/publico.png',
-      videoUrl:'t7v3UFn1XV0?si=ynS9qD9AZizhNSyV',
+      videoUrl: 't7v3UFn1XV0?si=ynS9qD9AZizhNSyV',
       frontendRepo: undefined, // no aplica en monolito
       backendRepo: 'https://github.com/alexmruiz/Shop_Online',
 

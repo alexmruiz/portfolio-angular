@@ -5,6 +5,7 @@ export interface Project {
   overview: string;
   features: string[];
   architecture: string;
+  architectureSections?: { title: string; description: string }[];
 
   image: string;          // imagen principal (card)
   images?: string[];      // capturas para carrusel

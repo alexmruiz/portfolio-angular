@@ -77,9 +77,22 @@
               Arquitectura & Despliegue
             </h3>
 
-            <p class="text-[var(--text-secondary)] leading-relaxed">
-              {{ project.architecture }}
-            </p>
+            @if (project.architectureSections; as architectureSections) {
+              <div class="space-y-3">
+                @for (section of architectureSections; track section.title) {
+                  <section class="rounded-xl border border-white/10 bg-white/[0.03] p-4">
+                    <h4 class="mb-2 text-sm font-semibold text-white">{{ section.title }}</h4>
+                    <p class="text-sm leading-relaxed text-[var(--text-secondary)]">
+                      {{ section.description }}
+                    </p>
+                  </section>
+                }
+              </div>
+            } @else {
+              <p class="text-[var(--text-secondary)] leading-relaxed">
+                {{ project.architecture }}
+              </p>
+            }
           </div>
         </div>
 
